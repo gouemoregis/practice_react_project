@@ -1,0 +1,10 @@
+name: Issues trigger
+on:
+    issues:
+        types: [opened, closed]
+jobs:
+    label_issue:
+        runs-on: ubuntu-latest
+        steps:
+            - name: List the issue
+              run: echo "${{github.event.issue.html_url}}"
